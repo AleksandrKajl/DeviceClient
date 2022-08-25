@@ -176,7 +176,10 @@ void DeviceClient::initTable()
     {
         for (int i{}; i < it->rowCount(); ++i)
         {
-            QTableWidgetItem* item = new QTableWidgetItem(QString::number((uint8_t)m_reg[i + arrOffst[j]], 16).toUpper());
+            QString prefix;
+            if ((uint8_t)m_reg[i + arrOffst[j]] < 0x10)
+                prefix.append("0");
+            QTableWidgetItem* item = new QTableWidgetItem(prefix + QString::number((uint8_t)m_reg[i + arrOffst[j]], 16).toUpper());
             it->setItem(i, 0, item);
         }
         ++j;
