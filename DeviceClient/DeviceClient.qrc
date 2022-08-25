@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/DeviceClient">
+        <file>client.png</file>
+    </qresource>
+</RCC>
